@@ -1,0 +1,28 @@
+:root {
+    --myGreen: #09814A;
+    --myWhite: #FEFFEA;
+    --myBrown: #863B1D;
+    --myBlack: #0A0908;
+}
+
+body{
+    background-color: var(--myWhite);
+}
+ 
+
+/* Helper classes */
+.Black{
+    color: var(--myBlack);
+}
+
+.White{
+    color: var(--myWhite);
+}
+
+.Green{
+    color: var(--myGreen);
+}
+
+.Brown{
+    color: var(--myBrown);
+}
