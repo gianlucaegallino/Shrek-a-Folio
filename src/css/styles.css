@@ -1,28 +1,344 @@
+@font-face {
+  font-family: PlayFair;
+  src: url(../media/fonts/PlayfairDisplay-Regular.ttf);
+}
+
+@font-face {
+  font-family: Roboto;
+  src: url(../media/fonts/Roboto-Regular.ttf);
+}
+
 :root {
-    --myGreen: #09814A;
-    --myWhite: #FEFFEA;
-    --myBrown: #863B1D;
-    --myBlack: #0A0908;
+  --myBlack: #0a0908;
+  --myBoxShadow: 0px 3px 15px rgba(0, 0, 0, 0.384);
+  --myBrown: #863b1d;
+  --myClearWhite: #fffff9;
+  --myGreen: #09814a;
+  --myWhite: #feffea;
 }
 
-body{
-    background-color: var(--myWhite);
-}
- 
-
-/* Helper classes */
-.Black{
-    color: var(--myBlack);
+body {
+  background-color: var(--myWhite);
+  font-family: Roboto;
+  overflow-x: hidden;
+  width: 100%;
 }
 
-.White{
-    color: var(--myWhite);
+h1 {
+  font-size: 90px;
+  font-weight: 200;
+  margin: 0px;
 }
 
-.Green{
-    color: var(--myGreen);
+h2 {
+  font-size: 60px;
+  font-weight: 200;
 }
 
-.Brown{
-    color: var(--myBrown);
+header,
+main {
+  padding: 80px 110px;
+}
+
+.AboutMe,
+.ContactMe {
+  display: flex;
+  flex-direction: row;
+}
+
+.AboutMe {
+  align-items: center;
+}
+.aboutHeader {
+    margin: 0px;
+  }
+
+.AboutMe,
+.MyWork {
+  margin-bottom: 80px;
+}
+.MyWork {
+  padding-top: 0px;
+}
+
+.card {
+  background-color: var(--myClearWhite);
+  box-shadow: var(--myBoxShadow);
+  height: auto;
+  max-width: 800px;
+}
+
+.cardName {
+  margin: 0px;
+}
+
+.cardContainer {
+  display: grid;
+  gap: 70px;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+}
+
+.cardPicture {
+  height: 340px;
+  object-fit: cover;
+  width: 100%;
+}
+
+.cardText {
+  padding: 25px;
+}
+
+.ContactMe {
+  background-color: var(--myBrown);
+  display: flex;
+  flex-direction: row;
+  padding: 80px;
+}
+
+.contactTextArea {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+}
+
+.decSquare {
+  background-color: var(--myGreen);
+  height: 1px;
+  position: absolute;
+  transform: scale(1800) rotate(-13deg);
+  width: 10px;
+  z-index: -1;
+}
+
+.description {
+  background-color: var(--myClearWhite);
+  height: min-content;
+  max-width: 850px;
+  box-shadow: var(--myBoxShadow);
+  display: flex;
+  flex-direction: column;
+  padding: 50px;
+
+  gap: 40px;
+}
+
+.linecontainer {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+.separatedlinecontainer {
+  align-items: center;
+  justify-content: space-between;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.mainPhoto {
+  background-image: url(../media/img/mainShrek.jpg);
+  background-position: center;
+  background-size: cover;
+  height: 760px;
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+
+  box-shadow: var(--myBoxShadow);
+  padding: 10px;
+}
+
+.secondaryImage {
+  height: auto;
+  max-width: 600px;
+}
+
+.socials {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  justify-content: center;
+  align-self: flex-end;
+}
+
+.svg {
+  height: 24px;
+  width: 24px;
+}
+
+.svg:hover,
+.svgLarge:hover,
+.svgMedium:hover {
+  cursor: pointer;
+}
+
+.svgLarge {
+  height: 48px;
+  width: 48px;
+}
+
+.svgMedium {
+  height: 42px;
+  width: 42px;
+}
+
+/* ----- Helper Classes----- */
+
+.Black {
+  color: var(--myBlack);
+}
+
+.Brown {
+  color: var(--myBrown);
+}
+
+.Green {
+  color: var(--myGreen);
+}
+
+.Header {
+  font-family: PlayFair;
+}
+
+.White {
+  color: var(--myWhite);
+}
+
+.WhiteSVG {
+  filter: brightness(0) saturate(100%) invert(93%) sepia(15%) saturate(297%)
+    hue-rotate(359deg) brightness(105%) contrast(108%);
+}
+
+.bigger {
+  font-size: 29px;
+  margin: 10px;
+  opacity: 0.8;
+}
+
+.separated {
+  line-height: 42.5px;
+}
+
+/* ----- Tablet styles ----- */
+@media (max-width: 1500px) and (min-width: 601px) {
+    .description{
+        background-color: aqua;
+    }
+}
+
+/* ----- Phone styles ----- */
+@media (max-width: 700px){
+  .AboutMe,
+  .MyWork,
+  .contactTextArea {
+    flex-direction: column;
+    padding: 25px;
+  }
+
+  .ContactMe {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    padding: 0px;
+  }
+
+  .AboutMe {
+    gap: 40px;
+  }
+
+  .aboutHeader {
+    margin: 0px;
+  }
+
+  .big {
+    font-size: 22px;
+    opacity: 0.8;
+  }
+
+  .phone,
+  .email {
+    margin: 0px;
+  }
+  .card {
+    height: 660px;
+    max-width: 600px;
+  }
+
+  .nomargin {
+    margin: 0px;
+  }
+
+  .cardPicture {
+    height: 400px;
+  }
+  .cardContainer {
+    gap: 70px;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    justify-items: center;
+  }
+
+  .contactHeader {
+    margin: 3px;
+  }
+
+  .contactTextArea {
+    font-size: 20px;
+    padding-bottom: 120px;
+    gap: 20px;
+  }
+
+  .decSquare {
+    transform: scale(1000) rotate(-30deg);
+  }
+
+  .description {
+    display: flex;
+    flex-direction: column;
+    background-color: transparent;
+    box-shadow: none;
+    gap: 10px;
+    padding: 0px;
+
+  }
+
+  .Header {
+    align-self: center;
+    justify-self: center;
+  }
+
+  .mainPhoto {
+    height: 650px;
+    align-items: flex-start;
+  }
+
+  .svg {
+    height: 24px;
+    width: 24px;
+  }
+
+  .svgLarge {
+    height: 56px;
+    width: 56px;
+  }
+
+  .svgMedium {
+    height: 42px;
+    width: 42px;
+  }
+
+  .secondaryImage {
+    min-height: 675px;
+    min-width: 100%;
+    object-fit: cover;
+  }
+
+  .socials {
+    gap: 35px;
+    align-self: center;
+  }
 }
